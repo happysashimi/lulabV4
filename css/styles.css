@@ -1,0 +1,310 @@
+:root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --accent-color: #FFD93D;
+    --background-color: #F7FFF7;
+    --text-color: #2C3E50;
+    --card-background: #FFFFFF;
+    --header-text-color: #FFFFFF;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    overflow-x: hidden;
+    position: relative;
+    background-color: var(--background-color);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Images/BGImage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+    pointer-events: none;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--header-text-color);
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 4rem;
+    z-index: 1;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Spinning dots effect */
+header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--secondary-color) 10%, transparent 10%),
+                radial-gradient(circle, var(--secondary-color) 10%, transparent 10%);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    opacity: 0.3;
+    animation: move 20s linear infinite;
+}
+
+@keyframes move {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    background-color: var(--card-background);
+    z-index: 2;
+    opacity: 0.95; /* Set transparency */
+}
+
+.content-section {
+    padding: 50px 20px;
+    background-color: transparent;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin-top: 50px; /* Added extra margin between sections */
+    opacity: 0.95; /* Set transparency */
+}
+
+.founder-info {
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    margin-top: 3rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0.95; /* Set transparency */
+}
+
+.founder-info:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.founder-photo {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px; /* Keep it equal to width for a perfect circle */
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color); /* Add a border color of your choice */
+    object-fit: cover; /* Ensures the image covers the circle without distortion */
+    margin-top: 20px; /* Adjust the spacing as needed */
+    opacity: 1; /* Ensures the image is fully opaque */
+}
+
+.signup-section {
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    margin-top: 3rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0.95; /* Set transparency */
+}
+
+.signup-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.course-offerings, .past-projects {
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0.95; /* Set transparency */
+}
+
+.course-offerings:hover, .past-projects:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-top: 0;
+    opacity: 1; /* Ensure text is fully opaque */
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    opacity: 1; /* Ensure button is fully opaque */
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card, .course-card {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 2;
+    border: 3px dashed var(--accent-color);
+    opacity: 0.95; /* Set transparency */
+}
+
+.project-card:hover, .course-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.price-tag {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    transform: rotate(-5deg);
+    margin-top: 10px;
+}
+
+.interview-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    transform: rotate(5deg);
+    margin-top: 10px;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--header-text-color);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 1; /* Ensure footer is fully opaque */
+}
+
+footer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 900;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Dialog for displaying project details */
+.dialog-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dialog-container.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-btn {
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #FFD93D;
+}
+
+.dialog-video {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
